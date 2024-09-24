@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
 
 public abstract class Core
 {
-
+    private protected Aes aes = Aes.Create();
+    private string Now => DateTime.Now.ToShortTimeString();
     private protected Socket socket;
     private IPHostEntry ipHost;
     private IPAddress ipAddr;
     private protected IPEndPoint ipEndPoint;
     private protected Thread waitingForMessage;
-
 
     private string host;
     private int port;
@@ -33,6 +29,7 @@ public abstract class Core
         this.bServer = bServer;
         this.bClient = bClient;
         this.listLog = listLog;
+        this.bSend = bSend;
     }
     public void Open()
     {
@@ -57,6 +54,10 @@ public abstract class Core
                 {
                     waitingForMessage = new Thread(new ParameterizedThreadStart(GetMessages));
                     waitingForMessage.Start();
+                    bSend.Invoke(new Action(() => {
+                        bSend.Enabled = true;
+                        bSend.BackColor = Color.Transparent;
+                    }));
                     return;
                 }
             }
@@ -81,21 +82,18 @@ public abstract class Core
 
     private void GetMessages(object? obj)
     {
+        ConnectSecurity();
         while (true)
         {
             Thread.Sleep(50);
             try
             {
-                string Message = GetData();
-                listLog.Invoke(new Action(() =>
-                    listLog.Items.Add(DateTime.Now.ToShortTimeString() + " Get: " + Message)));
+                string data = GetData();
+                Log("Get:", data);
             } catch { }
         }
     }
-
-
-
-    private string GetData()
+    private protected string GetData()
     {
         string GetInformation = "";
         byte[] GetBytes = new byte[1024];
@@ -103,15 +101,39 @@ public abstract class Core
         GetInformation += Encoding.Unicode.GetString(GetBytes, 0, BytesRec);
         return GetInformation;
     }
+    private int iSend = 0;
     public void Send(string data)
     {
+        int i = iSend++;
         byte[] SendMsg = Encoding.Unicode.GetBytes(data);
+        Log("Try send [" + i + "]:", data);
         socket.Send(SendMsg);
+        Log("Success send [" + i + "]!");
     }
+
+
+
+
+    private protected void Log(string title, params string[] log)
+    {
+        listLog.Invoke(new Action(() => {
+            listLog.Items.Add(Now + " " + title);
+            for (int i = 0; i < log.Length; i++)
+            {
+                listLog.Items.Add("\t" + log[i]);
+            }
+        }));
+    }
+
+
 
 
 
     private protected virtual bool OpenNext(){
         return false;
+    }
+    private protected virtual void ConnectSecurity()
+    {
+
     }
 }

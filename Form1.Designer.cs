@@ -76,6 +76,7 @@
         // listLog
         // 
         listLog.FormattingEnabled = true;
+        listLog.HorizontalScrollbar = true;
         listLog.ItemHeight = 15;
         listLog.Location = new Point(12, 41);
         listLog.Name = "listLog";
@@ -91,12 +92,14 @@
         // 
         // bSend
         // 
+        bSend.BackColor = Color.Orange;
+        bSend.Enabled = false;
         bSend.Location = new Point(383, 411);
         bSend.Name = "bSend";
         bSend.Size = new Size(75, 23);
         bSend.TabIndex = 7;
         bSend.Text = "Отправить";
-        bSend.UseVisualStyleBackColor = true;
+        bSend.UseVisualStyleBackColor = false;
         bSend.Click += bSend_Click;
         // 
         // Form1

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mina987\\Desktop\\Security\\lab2\\lab2\\lab2.csproj",
-      "projectName": "lab2",
-      "projectPath": "C:\\Users\\mina987\\Desktop\\Security\\lab2\\lab2\\lab2.csproj",
+      "projectUniqueName": "C:\\Users\\mina987\\Desktop\\Socket-main\\Socket.csproj",
+      "projectName": "Socket",
+      "projectPath": "C:\\Users\\mina987\\Desktop\\Socket-main\\Socket.csproj",
       "packagesPath": "C:\\Users\\mina987\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mina987\\Desktop\\Security\\lab2\\lab2\\obj\\",
+      "outputPath": "C:\\Users\\mina987\\Desktop\\Socket-main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mina987\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -70,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

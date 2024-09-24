@@ -1,0 +1,16 @@
+C:\Users\mina987\Desktop\Socket-main\bin\Debug\net8.0-windows\Socket.exe
+C:\Users\mina987\Desktop\Socket-main\bin\Debug\net8.0-windows\Socket.deps.json
+C:\Users\mina987\Desktop\Socket-main\bin\Debug\net8.0-windows\Socket.runtimeconfig.json
+C:\Users\mina987\Desktop\Socket-main\bin\Debug\net8.0-windows\Socket.dll
+C:\Users\mina987\Desktop\Socket-main\bin\Debug\net8.0-windows\Socket.pdb
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Form1.resources
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.csproj.GenerateResource.cache
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.AssemblyInfoInputs.cache
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.AssemblyInfo.cs
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.csproj.CoreCompileInputs.cache
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.dll
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\refint\Socket.dll
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.pdb
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\Socket.genruntimeconfig.cache
+C:\Users\mina987\Desktop\Socket-main\obj\Debug\net8.0-windows\ref\Socket.dll

@@ -1,22 +1,15 @@
-
-using System.Net;
-using System.Windows.Forms;
-using System;
-
 public partial class Form1 : Form
 {
+    Core core;
+    Thread socketThread;
     public Form1()
     {
         InitializeComponent();
     }
-    Core core;
-    private Thread socketThread;
     private void bServer_Click(object sender, EventArgs e)
     {
         bClient.BackColor = Color.Red;
-        bClient.Enabled = false;
         bServer.BackColor = Color.Orange;
-        bServer.Enabled = false;
         core = new Server(iIP.Text, (int)iPort.Value, bServer, bClient, bSend, listLog);
         Open();
     }
@@ -24,14 +17,14 @@ public partial class Form1 : Form
     private void bClient_Click(object sender, EventArgs e)
     {
         bClient.BackColor = Color.Orange;
-        bClient.Enabled = false;
         bServer.BackColor = Color.Red;
-        bServer.Enabled = false;
         core = new Client(iIP.Text, (int)iPort.Value, bServer, bClient, bSend, listLog);
         Open();
     }
     private void Open()
     {
+        bClient.Enabled = false;
+        bServer.Enabled = false;
         socketThread = new Thread(new ThreadStart(core.Open));
         socketThread.IsBackground = true;
         socketThread.Start();
